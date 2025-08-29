@@ -1,1 +1,172 @@
-# VivaLeve
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VivaLeve - Sua Dieta Inteligente</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- jsPDF e svg2pdf -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/svg2pdf.js@2.0.0/dist/svg2pdf.min.js"></script>
+</head>
+<body class="bg-gray-100 font-sans">
+
+  <!-- Header -->
+  <header class="bg-emerald-600 text-white py-6 shadow-lg">
+    <div class="max-w-6xl mx-auto flex justify-between items-center px-6">
+      <!-- Logotipo VivaLeve -->
+      <div class="flex items-center">
+        <svg id="logo-vivaleve" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 80" width="200" height="60">
+          <path d="M40 70 C20 40, 20 10, 50 10 C80 10, 80 40, 60 70 Z" 
+                fill="#059669" stroke="#047857" stroke-width="2"/>
+          <text x="100" y="50" font-family="Poppins, Arial, sans-serif" font-weight="bold" font-size="36" fill="#ffffff">
+            Viva<tspan fill="#bbf7d0">Leve</tspan>
+          </text>
+        </svg>
+      </div>
+
+      <!-- Menu -->
+      <nav>
+        <ul class="flex gap-6 font-semibold">
+          <li><a href="#formulario" class="hover:text-gray-200">Dieta</a></li>
+          <li><a href="#sobre" class="hover:text-gray-200">Sobre</a></li>
+          <li><a href="#contato" class="hover:text-gray-200">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="text-center py-20 bg-white">
+    <h2 class="text-5xl font-extrabold text-emerald-700">
+      Bem-vindo à <span class="text-gray-800">VivaLeve</span>
+    </h2>
+    <p class="mt-6 text-lg text-gray-600 max-w-2xl mx-auto">
+      Descubra a melhor versão de você mesmo com planos alimentares personalizados.  
+      A <strong>VivaLeve</strong> calcula sua dieta ideal e gera um cardápio exclusivo para o seu objetivo.
+    </p>
+    <a href="#formulario" class="mt-8 inline-block bg-emerald-600 text-white px-8 py-3 rounded-lg text-lg font-bold shadow-lg hover:bg-emerald-700">
+      Monte sua dieta agora
+    </a>
+  </section>
+
+  <!-- Formulário -->
+  <section id="formulario" class="py-20">
+    <div class="max-w-3xl mx-auto px-6">
+      <h3 class="text-3xl font-bold text-gray-800 text-center mb-10">
+        Calcule sua dieta com a VivaLeve
+      </h3>
+
+      <form id="dietaForm" class="bg-white p-8 shadow-lg rounded-lg">
+        <label class="block mb-4">
+          <span class="text-gray-700">Seu Nome:</span>
+          <input type="text" id="nome" required class="mt-1 block w-full border-gray-300 rounded-lg shadow-sm focus:ring-emerald-500 focus:border-emerald-500">
+        </label>
+
+        <label class="block mb-4">
+          <span class="text-gray-700">Idade:</span>
+          <input type="number" id="idade" required class="mt-1 block w-full border-gray-300 rounded-lg shadow-sm focus:ring-emerald-500 focus:border-emerald-500">
+        </label>
+
+        <label class="block mb-4">
+          <span class="text-gray-700">Objetivo:</span>
+          <select id="objetivo" required class="mt-1 block w-full border-gray-300 rounded-lg shadow-sm focus:ring-emerald-500 focus:border-emerald-500">
+            <option value="emagrecer">Emagrecer</option>
+            <option value="ganhar">Ganhar Massa</option>
+            <option value="manter">Manter Peso</option>
+          </select>
+        </label>
+
+        <button type="submit" class="w-full bg-emerald-600 text-white py-3 rounded-lg font-bold hover:bg-emerald-700">Gerar Dieta</button>
+      </form>
+
+      <div id="resultado" class="mt-10 hidden">
+        <h4 class="text-2xl font-bold text-gray-800 mb-4">Sua Dieta Personalizada:</h4>
+        <p id="detalhesDieta" class="text-gray-700"></p>
+        <button id="downloadPDF" class="mt-6 bg-emerald-600 text-white px-6 py-3 rounded-lg font-bold hover:bg-emerald-700">Baixar PDF</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-emerald-700 text-white py-6 text-center mt-20">
+    <p>© 2025 VivaLeve. Todos os direitos reservados.</p>
+  </footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  document.getElementById("dietaForm")?.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const nome = document.getElementById("nome").value;
+    const idade = document.getElementById("idade").value;
+    const objetivo = document.getElementById("objetivo").value;
+
+    let dieta = "";
+    if (objetivo === "emagrecer") {
+      dieta = "Plano focado em déficit calórico com alimentos leves e nutritivos.";
+    } else if (objetivo === "ganhar") {
+      dieta = "Plano rico em proteínas e calorias saudáveis para ganho de massa muscular.";
+    } else {
+      dieta = "Plano equilibrado para manutenção do peso e bem-estar.";
+    }
+
+    document.getElementById("resultado").classList.remove("hidden");
+    document.getElementById("detalhesDieta").innerText = `Olá ${nome}, ${dieta}`;
+
+    document.getElementById("downloadPDF").onclick = () => {
+      const { jsPDF } = window.jspdf;
+      const doc = new jsPDF();
+
+      // === Faixa verde no topo ===
+      doc.setFillColor(5, 150, 105);
+      doc.rect(0, 0, 210, 40, "F");
+
+      // === Inserindo logo na faixa ===
+      const svgElement = document.querySelector("#logo-vivaleve");
+      svg2pdf(svgElement, doc, {
+        x: 65,
+        y: 5,
+        width: 80,
+        height: 30
+      });
+
+      // === Cabeçalho estilizado ===
+      doc.setFontSize(20);
+      doc.setTextColor(46, 125, 50);
+      doc.text("Plano Alimentar Personalizado", 105, 60, { align: "center" });
+
+      // === Caixa com dados do usuário ===
+      doc.setFontSize(14);
+      doc.setTextColor(0, 0, 0);
+      doc.roundedRect(15, 70, 180, 30, 5, 5, "S");
+      doc.text(`Nome: ${nome}`, 20, 80);
+      doc.text(`Idade: ${idade}`, 20, 90);
+      doc.text(`Objetivo: ${objetivo}`, 100, 90);
+
+      // === Seção Dieta com fundo verde claro ===
+      doc.setFillColor(200, 245, 220); // verde claro
+      doc.roundedRect(15, 110, 180, 50, 5, 5, "F"); // fundo verde claro
+
+      doc.setFontSize(16);
+      doc.setTextColor(46, 125, 50);
+      doc.text("Recomendações:", 20, 120);
+
+      doc.setFontSize(12);
+      doc.setTextColor(50, 50, 50);
+      doc.text(dieta, 20, 130, { maxWidth: 170 });
+
+      // === Rodapé ===
+      doc.setFontSize(10);
+      doc.setTextColor(120, 120, 120);
+      doc.text("© 2025 VivaLeve - Saúde e Bem-estar", 105, 290, { align: "center" });
+
+      // Salvar PDF
+      doc.save("dieta_vivaleve.pdf");
+    };
+  });
+});
+</script>
+</body>
+</html>
