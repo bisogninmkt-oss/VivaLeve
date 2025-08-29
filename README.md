@@ -36,15 +36,14 @@
   <div class="h-24"></div>
 
   <!-- Hero Section -->
-  <section class="relative bg-cover bg-center h-[80vh]" style="background-image: url('https://images.unsplash.com/photo-1510626176961-4b57d4fbad03?auto=format&fit=crop&w=1400&q=80');">
-    <div class="absolute inset-0 bg-emerald-900 bg-opacity-60 flex items-center justify-center text-center px-6">
-      <div>
-        <h1 class="text-4xl md:text-6xl font-bold text-white">Viva saudável, VivaLeve</h1>
-        <p class="mt-4 text-xl text-emerald-100">Monte sua dieta personalizada em minutos</p>
-        <a href="dieta.html" class="mt-6 inline-block bg-white text-emerald-600 px-8 py-3 rounded-lg font-bold shadow-lg hover:bg-gray-100">
-          Começar Agora
-        </a>
-      </div>
+  <section class="relative flex items-center justify-center h-[70vh] bg-cover bg-center" 
+           style="background-image: url('images/hero.jpg');">
+    <div class="bg-emerald-900 bg-opacity-60 p-10 rounded-lg text-center text-white">
+      <h1 class="text-4xl md:text-6xl font-bold">Viva saudável, VivaLeve</h1>
+      <p class="mt-4 text-xl">Monte sua dieta personalizada em minutos</p>
+      <a href="dieta.html" class="mt-6 inline-block bg-white text-emerald-600 px-8 py-3 rounded-lg font-bold shadow-lg hover:bg-gray-100">
+        Começar Agora
+      </a>
     </div>
   </section>
 
@@ -55,19 +54,19 @@
 
       <div class="grid md:grid-cols-3 gap-10">
         <div class="bg-gray-50 p-6 rounded-lg shadow hover:shadow-lg transition">
-          <img src="https://images.unsplash.com/photo-1506806732259-39c2d0268443?auto=format&fit=crop&w=600&q=80" alt="Salada saudável" class="rounded-lg mb-4">
+          <img src="images/salada.jpg" alt="Salada saudável" class="rounded-lg mb-4 w-full h-48 object-cover">
           <h3 class="text-xl font-semibold text-emerald-700">Saladas Frescas</h3>
           <p class="text-gray-600 mt-2">Receitas leves e nutritivas para o seu dia a dia.</p>
         </div>
 
         <div class="bg-gray-50 p-6 rounded-lg shadow hover:shadow-lg transition">
-          <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=600&q=80" alt="Frutas coloridas" class="rounded-lg mb-4">
+          <img src="images/frutas.jpg" alt="Frutas coloridas" class="rounded-lg mb-4 w-full h-48 object-cover">
           <h3 class="text-xl font-semibold text-emerald-700">Frutas Coloridas</h3>
           <p class="text-gray-600 mt-2">Cheias de vitaminas e energia natural para o seu corpo.</p>
         </div>
 
         <div class="bg-gray-50 p-6 rounded-lg shadow hover:shadow-lg transition">
-          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=600&q=80" alt="Prato fitness" class="rounded-lg mb-4">
+          <img src="images/prato.jpg" alt="Prato fitness" class="rounded-lg mb-4 w-full h-48 object-cover">
           <h3 class="text-xl font-semibold text-emerald-700">Pratos Fitness</h3>
           <p class="text-gray-600 mt-2">Cardápios pensados para ganhar massa e manter energia.</p>
         </div>
