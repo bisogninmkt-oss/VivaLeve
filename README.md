@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VivaLeve - Sua Dieta Inteligente</title>
+  <title>VivaLeve - Saúde e Bem-estar</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-100 font-sans">
@@ -11,7 +11,6 @@
   <!-- Header fixo -->
   <header class="bg-emerald-600 text-white shadow-lg fixed w-full top-0 z-50">
     <div class="max-w-6xl mx-auto flex justify-between items-center px-6 py-4">
-      
       <!-- Logotipo -->
       <a href="index.html" class="flex items-center">
         <svg id="logo-vivaleve" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 80" width="160" height="50">
@@ -28,61 +27,61 @@
         <ul class="flex gap-6 font-semibold">
           <li><a href="index.html" class="hover:text-gray-200">Início</a></li>
           <li><a href="dieta.html" class="hover:text-gray-200">Monte sua Dieta</a></li>
-          <li><a href="#sobre" class="hover:text-gray-200">Sobre</a></li>
-          <li><a href="#contato" class="hover:text-gray-200">Contato</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <!-- Espaço para não sobrepor o conteúdo -->
+  <!-- Espaço para não sobrepor -->
   <div class="h-24"></div>
 
-  <!-- Hero -->
-  <section class="relative text-center py-32 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1546069901-ba9599a7e63c');">
-    <div class="absolute inset-0 bg-black bg-opacity-40"></div>
-    <div class="relative z-10 text-white">
-      <h1 class="text-5xl font-extrabold">Transforme sua Vida com a <span class="text-emerald-300">VivaLeve</span></h1>
-      <p class="mt-6 text-lg max-w-2xl mx-auto">
-        Planos alimentares saudáveis, personalizados e fáceis de seguir.  
-        Descubra como uma dieta pode ser leve e prazerosa.
-      </p>
-      <a href="dieta.html" class="mt-8 inline-block bg-emerald-500 text-white px-10 py-4 rounded-lg text-xl font-bold shadow-lg hover:bg-emerald-700">
-        Monte sua dieta agora
-      </a>
+  <!-- Hero Section -->
+  <section class="relative bg-cover bg-center h-[80vh]" style="background-image: url('https://images.unsplash.com/photo-1510626176961-4b57d4fbad03?auto=format&fit=crop&w=1400&q=80');">
+    <div class="absolute inset-0 bg-emerald-900 bg-opacity-60 flex items-center justify-center text-center px-6">
+      <div>
+        <h1 class="text-4xl md:text-6xl font-bold text-white">Viva saudável, VivaLeve</h1>
+        <p class="mt-4 text-xl text-emerald-100">Monte sua dieta personalizada em minutos</p>
+        <a href="dieta.html" class="mt-6 inline-block bg-white text-emerald-600 px-8 py-3 rounded-lg font-bold shadow-lg hover:bg-gray-100">
+          Começar Agora
+        </a>
+      </div>
     </div>
   </section>
 
-  <!-- Galeria -->
+  <!-- Seção de Destaques -->
   <section class="py-20 bg-white">
-    <h2 class="text-4xl font-bold text-center text-emerald-700 mb-12">Alimentação Saudável</h2>
-    <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-6">
-      <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836" alt="Salada colorida" class="rounded-lg shadow-lg">
-      <img src="https://images.unsplash.com/photo-1512058564366-c9e3e0464b8f" alt="Smoothie saudável" class="rounded-lg shadow-lg">
-      <img src="https://images.unsplash.com/photo-1543352634-4b9e5c9d3e8f" alt="Frutas frescas" class="rounded-lg shadow-lg">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold text-gray-800 mb-12">Alimentação Saudável ao Seu Alcance</h2>
+
+      <div class="grid md:grid-cols-3 gap-10">
+        <div class="bg-gray-50 p-6 rounded-lg shadow hover:shadow-lg transition">
+          <img src="https://images.unsplash.com/photo-1506806732259-39c2d0268443?auto=format&fit=crop&w=600&q=80" alt="Salada saudável" class="rounded-lg mb-4">
+          <h3 class="text-xl font-semibold text-emerald-700">Saladas Frescas</h3>
+          <p class="text-gray-600 mt-2">Receitas leves e nutritivas para o seu dia a dia.</p>
+        </div>
+
+        <div class="bg-gray-50 p-6 rounded-lg shadow hover:shadow-lg transition">
+          <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=600&q=80" alt="Frutas coloridas" class="rounded-lg mb-4">
+          <h3 class="text-xl font-semibold text-emerald-700">Frutas Coloridas</h3>
+          <p class="text-gray-600 mt-2">Cheias de vitaminas e energia natural para o seu corpo.</p>
+        </div>
+
+        <div class="bg-gray-50 p-6 rounded-lg shadow hover:shadow-lg transition">
+          <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=600&q=80" alt="Prato fitness" class="rounded-lg mb-4">
+          <h3 class="text-xl font-semibold text-emerald-700">Pratos Fitness</h3>
+          <p class="text-gray-600 mt-2">Cardápios pensados para ganhar massa e manter energia.</p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- Sobre -->
-  <section id="sobre" class="py-20 bg-gray-50">
-    <div class="max-w-4xl mx-auto text-center px-6">
-      <h2 class="text-3xl font-bold text-emerald-700 mb-6">Sobre a VivaLeve</h2>
-      <p class="text-gray-700 text-lg leading-relaxed">
-        A VivaLeve nasceu com o propósito de ajudar pessoas a atingirem seus objetivos com alimentação saudável.  
-        Nossos planos são baseados em ciência, mas adaptados para sua rotina, tornando cada refeição prazerosa.
-      </p>
-    </div>
-  </section>
-
-  <!-- Contato -->
-  <section id="contato" class="py-20 bg-emerald-50">
-    <div class="max-w-3xl mx-auto text-center px-6">
-      <h2 class="text-3xl font-bold text-emerald-700 mb-6">Fale Conosco</h2>
-      <p class="text-gray-700 mb-6">Tem dúvidas? Quer saber mais? Entre em contato conosco!</p>
-      <a href="mailto:contato@vivaleve.com" class="bg-emerald-600 text-white px-8 py-3 rounded-lg font-bold hover:bg-emerald-700">
-        contato@vivaleve.com
-      </a>
-    </div>
+  <!-- Call to Action -->
+  <section class="py-20 bg-emerald-600 text-white text-center">
+    <h2 class="text-3xl font-bold">Pronto para transformar sua alimentação?</h2>
+    <p class="mt-4 text-lg">Monte agora mesmo sua dieta personalizada com a VivaLeve.</p>
+    <a href="dieta.html" class="mt-6 inline-block bg-white text-emerald-600 px-8 py-3 rounded-lg font-bold shadow-lg hover:bg-gray-100">
+      Monte sua Dieta
+    </a>
   </section>
 
   <!-- Footer -->
