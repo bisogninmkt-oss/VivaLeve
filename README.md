@@ -32,15 +32,15 @@
     </div>
   </header>
 
-  <!-- Espaço para não sobrepor -->
+  <!-- Espaço para compensar header fixo -->
   <div class="h-24"></div>
 
   <!-- Hero Section -->
-  <section class="relative flex items-center justify-center h-[70vh] bg-cover bg-center" 
+  <section class="relative flex items-center justify-center min-h-[70vh] bg-cover bg-center text-center px-6"
            style="background-image: url('images/hero.jpg');">
-    <div class="bg-emerald-900 bg-opacity-60 p-10 rounded-lg text-center text-white">
-      <h1 class="text-4xl md:text-6xl font-bold">Viva saudável, VivaLeve</h1>
-      <p class="mt-4 text-xl">Monte sua dieta personalizada em minutos</p>
+    <div class="bg-emerald-900 bg-opacity-70 p-10 rounded-lg max-w-2xl">
+      <h1 class="text-4xl md:text-6xl font-bold text-white">Viva saudável, VivaLeve</h1>
+      <p class="mt-4 text-xl text-emerald-100">Monte sua dieta personalizada em minutos</p>
       <a href="dieta.html" class="mt-6 inline-block bg-white text-emerald-600 px-8 py-3 rounded-lg font-bold shadow-lg hover:bg-gray-100">
         Começar Agora
       </a>
